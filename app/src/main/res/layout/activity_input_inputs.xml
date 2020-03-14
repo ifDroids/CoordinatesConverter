@@ -23,6 +23,7 @@
         </TextView>
 
         <EditText
+            android:id="@+id/input_lat"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp">
@@ -48,6 +49,7 @@
         </TextView>
 
         <EditText
+            android:id="@+id/input_long"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginEnd="10dp">

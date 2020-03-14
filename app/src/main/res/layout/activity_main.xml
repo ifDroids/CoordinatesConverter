@@ -13,14 +13,13 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
         <include layout="@layout/activity_input_inputs"/>
     </FrameLayout>
 
 
 
     <FrameLayout
-        android:id="@+id/inoutbarcont"
+        android:id="@+id/inputbarcont"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,11 +33,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inoutbarcont">
+        app:layout_constraintTop_toBottomOf="@+id/inputbarcont">
         <include layout="@layout/activity_output_outputs"/>
     </FrameLayout>
 
     <FrameLayout
+        android:id="@+id/outputbarcont"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,5 +46,12 @@
         <include layout="@layout/activity_output_bar"/>
     </FrameLayout>
 
+    <Button
+        android:id="@+id/btn_debug"
+        android:text="ENTER"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/outputbarcont"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
