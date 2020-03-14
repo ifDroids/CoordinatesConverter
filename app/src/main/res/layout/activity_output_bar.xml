@@ -26,6 +26,7 @@
         android:layout_weight="0.9"
         style="?android:attr/buttonBarButtonStyle"
         android:text="UTM"
+        android:textColor="@android:color/holo_green_dark"
         android:textSize="20sp"
         android:gravity="center"/>
 
