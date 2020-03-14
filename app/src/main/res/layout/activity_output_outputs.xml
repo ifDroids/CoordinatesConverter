@@ -10,7 +10,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1.25"
-        android:text="sadasd"
         android:textSize="15sp"
         android:gravity="center"/>
 
@@ -26,7 +25,6 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1.25"
-        android:text="asdas"
         android:textSize="15sp"
         android:gravity="center"/>
     <View
@@ -40,7 +38,6 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.3"
-        android:text="sadasd"
         android:textSize="15sp"
         android:gravity="center"/>
 
