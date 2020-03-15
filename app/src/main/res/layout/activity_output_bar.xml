@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:weightSum="3">
 
     <Button
+        android:id="@+id/btn_output_gnss"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.9"
         style="?android:attr/buttonBarButtonStyle"
         android:text="@string/bar_gnss"
         android:textSize="20sp"
-        android:gravity="center"/>
+        android:gravity="center" />
+
     <View
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.15"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/darker_gray" />
 
     <Button
+        android:id="@+id/btn_output_utm"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.9"
@@ -28,7 +32,7 @@
         android:text="@string/bar_utm"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="20sp"
-        android:gravity="center"/>
+        android:gravity="center" />
 
     <View
         android:layout_width="0dp"
@@ -36,15 +40,16 @@
         android:layout_weight="0.15"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/darker_gray" />
 
     <Button
+        android:id="@+id/btn_output_hepos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.9"
         style="?android:attr/buttonBarButtonStyle"
         android:text="@string/bar_hepos"
         android:textSize="20sp"
-        android:gravity="center"/>
+        android:gravity="center" />
 
 </LinearLayout>

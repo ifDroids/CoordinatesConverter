@@ -1,5 +1,6 @@
 package com.ibo.coordinatesconv;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,9 +12,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static int x;
+    @BindView(R.id.btn_input_gnss)
+    Button mBtninput_gnss; //m for member of class
+    @BindView(R.id.btn_input_utm)
+    Button mBtninput_utm; //m for member of class
+    @BindView(R.id.btn_input_hepos)
+    Button mBtninput_hepos; //m for member of class
+    @BindView(R.id.btn_output_gnss)
+    Button mBtnoutput_gnss; //m for member of class
+    @BindView(R.id.btn_output_utm)
+    Button mBtnoutput_utm; //m for member of class
+    @BindView(R.id.btn_output_hepos)
+    Button mBtnoutput_hepos; //m for member of class
     @BindView(R.id.btn_debug)
     Button mBtnDebug; //m for member of class
     @BindView(R.id.input_lat)
@@ -27,25 +42,107 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.utm_zone_output)
     TextView mUtmzone;
 
-//     EditText input_lat;
-//     EditText input_long;
-//     TextView utm_x_output;
-//     TextView utm_y_output;
+    public void clearTextbutton(){
+        mInputlat.setText(" ");
+        mInputlong.setText(" ");
+        mUtmxoutput.setText(" ");
+        mUtmyoutput.setText(" ");
+        mUtmzone.setText(" ");
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        mBtnDebug.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String lat= mInputlat.getText().toString();
-                mUtmxoutput.setText(lat);
-                Log.e("MainActivity",getString(R.string.bar_gnss));
-                //mUtmxoutput.setText(mInputlat.getText().toString());
-
-            }
-        });
     }
+
+    @OnClick(R.id.btn_debug)
+    public void onButtonClick(View v) {
+        if (x==1){
+            mUtmxoutput.setText(mInputlat.getText().toString());
+            Log.e("MainActivity", "DEBUG");}
+        else if(x==2){
+            Log.e("MainActivity", "sdasda");
+        }
+        else if(x==3){
+            Log.e("MainActivity", "sdasda");
+        }
+        else if(x==4){
+            Log.e("MainActivity", "sdasda");
+        }
+        else  if(x==5){
+            Log.e("MainActivity", "sdasda");
+        }
+        else if(x==6){
+            Log.e("MainActivity", "sdasda");
+        }
+    }
+
+    @OnClick(R.id.btn_output_gnss)
+    public void onButtonoutput_gnss(View v) {
+        x=1;
+        mBtnoutput_gnss.setTextColor(Color.GREEN);
+        mBtninput_gnss.setTextColor(Color.RED);
+        mBtnoutput_utm.setTextColor(Color.RED);
+        mBtnoutput_hepos.setTextColor(Color.RED);
+        clearTextbutton();
+    }
+
+    @OnClick(R.id.btn_output_utm)
+    public void onButtonbtn_output_utm(View v) {
+        x=2;
+        mBtnoutput_gnss.setTextColor(Color.RED);
+        mBtninput_utm.setTextColor(Color.RED);
+        mBtnoutput_utm.setTextColor(Color.GREEN);
+        mBtnoutput_hepos.setTextColor(Color.RED);
+        clearTextbutton();
+    }
+
+    @OnClick(R.id.btn_output_hepos)
+    public void onButtonoutput_hepos(View v) {
+        x=3;
+        mBtnoutput_gnss.setTextColor(Color.RED);
+        mBtninput_hepos.setTextColor(Color.RED);
+        mBtnoutput_utm.setTextColor(Color.RED);
+        mBtnoutput_hepos.setTextColor(Color.GREEN);
+        clearTextbutton();
+    }
+
+    @OnClick(R.id.btn_input_gnss)
+    public void onButtoninput_gnss(View v) {
+        x=4;
+        mBtninput_gnss.setTextColor(Color.GREEN);
+        mBtnoutput_gnss.setTextColor(Color.RED);
+        mBtninput_utm.setTextColor(Color.RED);
+        mBtninput_hepos.setTextColor(Color.RED);
+        clearTextbutton();
+    }
+
+    @OnClick(R.id.btn_input_utm)
+    public void onButtoninput_utm(View v) {
+        x=5;
+        mBtninput_utm.setTextColor(Color.GREEN);
+        mBtnoutput_utm.setTextColor(Color.RED);
+        mBtninput_gnss.setTextColor(Color.RED);
+        mBtninput_hepos.setTextColor(Color.RED);
+        clearTextbutton();
+    }
+
+    @OnClick(R.id.btn_input_hepos)
+    public void onButtoninput_hepos(View v) {
+        x=6;
+        mBtninput_gnss.setTextColor(Color.RED);
+        mBtninput_utm.setTextColor(Color.RED);
+        mBtnoutput_hepos.setTextColor(Color.RED);
+        mBtninput_hepos.setTextColor(Color.GREEN);
+        clearTextbutton();
+    }
+
+
+
 }
+
+
+

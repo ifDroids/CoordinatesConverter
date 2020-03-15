@@ -11,13 +11,13 @@
         android:layout_height="wrap_content"
         android:layout_weight="1.25"
         android:textSize="15sp"
-        android:gravity="center"/>
+        android:gravity="center" />
 
     <View
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.1"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/darker_gray" />
 
 
     <TextView
@@ -26,12 +26,13 @@
         android:layout_height="match_parent"
         android:layout_weight="1.25"
         android:textSize="15sp"
-        android:gravity="center"/>
+        android:gravity="center" />
+
     <View
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.1"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/darker_gray" />
 
     <TextView
         android:id="@+id/utm_zone_output"
@@ -39,9 +40,7 @@
         android:layout_height="match_parent"
         android:layout_weight="0.3"
         android:textSize="15sp"
-        android:gravity="center"/>
-
-
+        android:gravity="center" />
 
 
 </LinearLayout>
