@@ -59,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        mBtninput_gnss.setBackground(getDrawable(R.drawable.round_frame_bar_option));
+        mBtnoutput_utm.setBackground(getDrawable(R.drawable.round_frame_bar_option));
     }
 
     @OnClick(R.id.btn_debug)
@@ -87,9 +90,13 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonoutput_gnss(View v) {
         x=1;
         mBtnoutput_gnss.setTextColor(Color.GREEN);
+        mBtnoutput_gnss.setBackground(getDrawable(R.drawable.round_frame_bar_option));
+
         mBtninput_gnss.setTextColor(Color.RED);
         mBtnoutput_utm.setTextColor(Color.RED);
         mBtnoutput_hepos.setTextColor(Color.RED);
+        mBtnoutput_utm.setBackground(null);
+        mBtnoutput_hepos.setBackground(null);
         mUtm_zone_boundaries.setVisibility(View.GONE);
         clearTextbutton();
     }
@@ -98,9 +105,15 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonbtn_output_utm(View v) {
         x=2;
         mBtnoutput_gnss.setTextColor(Color.RED);
+        mBtnoutput_gnss.setBackground(null);
+
         mBtninput_utm.setTextColor(Color.RED);
+
         mBtnoutput_utm.setTextColor(Color.GREEN);
+        mBtnoutput_utm.setBackground(getDrawable(R.drawable.round_frame_bar_option));
+
         mBtnoutput_hepos.setTextColor(Color.RED);
+        mBtnoutput_hepos.setBackground(null);
         mUtm_zone_boundaries.setVisibility(View.VISIBLE);
         clearTextbutton();
     }
@@ -108,10 +121,16 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btn_output_hepos)
     public void onButtonoutput_hepos(View v) {
         x=3;
-        mBtnoutput_gnss.setTextColor(Color.RED);
         mBtninput_hepos.setTextColor(Color.RED);
+
+        mBtnoutput_gnss.setTextColor(Color.RED);
+        mBtnoutput_gnss.setBackground(null);
         mBtnoutput_utm.setTextColor(Color.RED);
+        mBtnoutput_utm.setBackground(null);
+
         mBtnoutput_hepos.setTextColor(Color.GREEN);
+        mBtnoutput_hepos.setBackground(getDrawable(R.drawable.round_frame_bar_option));
+
         mUtm_zone_boundaries.setVisibility(View.GONE);
         clearTextbutton();
     }
@@ -120,9 +139,14 @@ public class MainActivity extends AppCompatActivity {
     public void onButtoninput_gnss(View v) {
         x=4;
         mBtninput_gnss.setTextColor(Color.GREEN);
+        mBtninput_gnss.setBackground(getDrawable(R.drawable.round_frame_bar_option));
+
         mBtnoutput_gnss.setTextColor(Color.RED);
+
         mBtninput_utm.setTextColor(Color.RED);
         mBtninput_hepos.setTextColor(Color.RED);
+        mBtninput_utm.setBackground(null);
+        mBtninput_hepos.setBackground(null);
         clearTextbutton();
     }
 
@@ -130,9 +154,14 @@ public class MainActivity extends AppCompatActivity {
     public void onButtoninput_utm(View v) {
         x=5;
         mBtninput_utm.setTextColor(Color.GREEN);
+        mBtninput_utm.setBackground(getDrawable(R.drawable.round_frame_bar_option));
+
         mBtnoutput_utm.setTextColor(Color.RED);
+
         mBtninput_gnss.setTextColor(Color.RED);
         mBtninput_hepos.setTextColor(Color.RED);
+        mBtninput_gnss.setBackground(null);
+        mBtninput_hepos.setBackground(null);
         clearTextbutton();
     }
 
@@ -141,8 +170,13 @@ public class MainActivity extends AppCompatActivity {
         x=6;
         mBtninput_gnss.setTextColor(Color.RED);
         mBtninput_utm.setTextColor(Color.RED);
+        mBtninput_gnss.setBackground(null);
+        mBtninput_utm.setBackground(null);
+
         mBtnoutput_hepos.setTextColor(Color.RED);
+
         mBtninput_hepos.setTextColor(Color.GREEN);
+        mBtninput_hepos.setBackground(getDrawable(R.drawable.round_frame_bar_option));
         clearTextbutton();
     }
 
