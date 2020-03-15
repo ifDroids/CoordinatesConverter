@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
     TextView mUtmyoutput;
     @BindView(R.id.utm_zone_output)
     TextView mUtmzone;
+    @BindView(R.id.utm_zone_boundaries)
+    View mUtm_zone_boundaries;
+
 
     public void clearTextbutton(){
         mInputlat.setText(" ");
@@ -87,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         mBtninput_gnss.setTextColor(Color.RED);
         mBtnoutput_utm.setTextColor(Color.RED);
         mBtnoutput_hepos.setTextColor(Color.RED);
+        mUtm_zone_boundaries.setVisibility(View.GONE);
         clearTextbutton();
     }
 
@@ -97,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         mBtninput_utm.setTextColor(Color.RED);
         mBtnoutput_utm.setTextColor(Color.GREEN);
         mBtnoutput_hepos.setTextColor(Color.RED);
+        mUtm_zone_boundaries.setVisibility(View.VISIBLE);
         clearTextbutton();
     }
 
@@ -107,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         mBtninput_hepos.setTextColor(Color.RED);
         mBtnoutput_utm.setTextColor(Color.RED);
         mBtnoutput_hepos.setTextColor(Color.GREEN);
+        mUtm_zone_boundaries.setVisibility(View.GONE);
         clearTextbutton();
     }
 
