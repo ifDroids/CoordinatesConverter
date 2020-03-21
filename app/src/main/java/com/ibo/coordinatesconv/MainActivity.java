@@ -97,12 +97,12 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btn_output_gnss)
     public void onButtonoutput_gnss(View v) {
         x=1;
-        mBtnoutput_gnss.setTextColor(Color.GREEN);
+        mBtnoutput_gnss.setTextColor(getResources().getColor(R.color.green));
         mBtnoutput_gnss.setBackground(getDrawable(R.drawable.round_frame_bar_option));
 
-        mBtninput_gnss.setTextColor(Color.RED);
-        mBtnoutput_utm.setTextColor(Color.RED);
-        mBtnoutput_hepos.setTextColor(Color.RED);
+        mBtninput_gnss.setTextColor(getResources().getColor(R.color.red));
+        mBtnoutput_utm.setTextColor(getResources().getColor(R.color.red));
+        mBtnoutput_hepos.setTextColor(getResources().getColor(R.color.red));
         mBtnoutput_utm.setBackground(null);
         mBtnoutput_hepos.setBackground(null);
         mUtm_zone_boundaries.setVisibility(View.GONE);
@@ -112,15 +112,15 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btn_output_utm)
     public void onButtonbtn_output_utm(View v) {
         x=2;
-        mBtnoutput_gnss.setTextColor(Color.RED);
+        mBtnoutput_gnss.setTextColor(getResources().getColor(R.color.red));
         mBtnoutput_gnss.setBackground(null);
 
-        mBtninput_utm.setTextColor(Color.RED);
+        mBtninput_utm.setTextColor(getResources().getColor(R.color.red));
 
-        mBtnoutput_utm.setTextColor(Color.GREEN);
+        mBtnoutput_utm.setTextColor(getResources().getColor(R.color.green));
         mBtnoutput_utm.setBackground(getDrawable(R.drawable.round_frame_bar_option));
 
-        mBtnoutput_hepos.setTextColor(Color.RED);
+        mBtnoutput_hepos.setTextColor(getResources().getColor(R.color.red));
         mBtnoutput_hepos.setBackground(null);
         mUtm_zone_boundaries.setVisibility(View.VISIBLE);
         clearTextbutton();
@@ -129,14 +129,14 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btn_output_hepos)
     public void onButtonoutput_hepos(View v) {
         x=3;
-        mBtninput_hepos.setTextColor(Color.RED);
+        mBtninput_hepos.setTextColor(getResources().getColor(R.color.red));
 
-        mBtnoutput_gnss.setTextColor(Color.RED);
+        mBtnoutput_gnss.setTextColor(getResources().getColor(R.color.red));
         mBtnoutput_gnss.setBackground(null);
-        mBtnoutput_utm.setTextColor(Color.RED);
+        mBtnoutput_utm.setTextColor(getResources().getColor(R.color.red));;
         mBtnoutput_utm.setBackground(null);
 
-        mBtnoutput_hepos.setTextColor(Color.GREEN);
+        mBtnoutput_hepos.setTextColor(getResources().getColor(R.color.green));
         mBtnoutput_hepos.setBackground(getDrawable(R.drawable.round_frame_bar_option));
 
         mUtm_zone_boundaries.setVisibility(View.GONE);
@@ -146,11 +146,11 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btn_input_gnss)
     public void onButtoninput_gnss(View v) {
         x=4;
-        mBtninput_gnss.setTextColor(Color.GREEN);
+        mBtninput_gnss.setTextColor(getResources().getColor(R.color.green));
         mBtninput_gnss.setBackground(getDrawable(R.drawable.round_frame_bar_option));
-        mBtnoutput_gnss.setTextColor(Color.RED);
-        mBtninput_utm.setTextColor(Color.RED);
-        mBtninput_hepos.setTextColor(Color.RED);
+        mBtnoutput_gnss.setTextColor(getResources().getColor(R.color.red));
+        mBtninput_utm.setTextColor(getResources().getColor(R.color.red));
+        mBtninput_hepos.setTextColor(getResources().getColor(R.color.red));
         mBtninput_utm.setBackground(null);
         mBtninput_hepos.setBackground(null);
         input_cor_text_lat.setText("Latitude");
@@ -162,13 +162,13 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btn_input_utm)
     public void onButtoninput_utm(View v) {
         x=5;
-        mBtninput_utm.setTextColor(Color.GREEN);
+        mBtninput_utm.setTextColor(getResources().getColor(R.color.green));
         mBtninput_utm.setBackground(getDrawable(R.drawable.round_frame_bar_option));
 
-        mBtnoutput_utm.setTextColor(Color.RED);
+        mBtnoutput_utm.setTextColor(getResources().getColor(R.color.red));
 
-        mBtninput_gnss.setTextColor(Color.RED);
-        mBtninput_hepos.setTextColor(Color.RED);
+        mBtninput_gnss.setTextColor(getResources().getColor(R.color.red));
+        mBtninput_hepos.setTextColor(getResources().getColor(R.color.red));
         mBtninput_gnss.setBackground(null);
         mBtninput_hepos.setBackground(null);
         input_cor_text_lat.setText("X");
@@ -180,12 +180,12 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btn_input_hepos)
     public void onButtoninput_hepos(View v) {
         x=6;
-        mBtninput_gnss.setTextColor(Color.RED);
-        mBtninput_utm.setTextColor(Color.RED);
+        mBtninput_gnss.setTextColor(getResources().getColor(R.color.red));
+        mBtninput_utm.setTextColor(getResources().getColor(R.color.red));
         mBtninput_gnss.setBackground(null);
         mBtninput_utm.setBackground(null);
-        mBtnoutput_hepos.setTextColor(Color.RED);
-        mBtninput_hepos.setTextColor(Color.GREEN);
+        mBtnoutput_hepos.setTextColor(getResources().getColor(R.color.red));
+        mBtninput_hepos.setTextColor(getResources().getColor(R.color.green));
         mBtninput_hepos.setBackground(getDrawable(R.drawable.round_frame_bar_option));
         input_cor_text_lat.setText("X");
         input_cor_text_lon.setText("Y");

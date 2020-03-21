@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.9"
         style="?android:attr/buttonBarButtonStyle"
+        android:textColor="@color/red"
         android:text="@string/bar_gnss"
         android:textSize="20sp"
         android:gravity="center" />
@@ -30,7 +31,7 @@
         android:layout_weight="0.9"
         style="?android:attr/buttonBarButtonStyle"
         android:text="@string/bar_utm"
-        android:textColor="@android:color/holo_green_dark"
+        android:textColor="@color/green"
         android:textSize="20sp"
         android:gravity="center" />
 
@@ -49,6 +50,7 @@
         android:layout_weight="0.9"
         style="?android:attr/buttonBarButtonStyle"
         android:text="@string/bar_hepos"
+        android:textColor="@color/red"
         android:textSize="20sp"
         android:gravity="center" />
 
