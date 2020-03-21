@@ -16,8 +16,8 @@
     <View
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.1"
-        android:background="@android:color/darker_gray" />
+        android:layout_weight="0.05"
+        android:background="@drawable/round_frame_bar_separator"/>
 
 
     <TextView
@@ -32,8 +32,8 @@
         android:id="@+id/utm_zone_boundaries"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.1"
-        android:background="@android:color/darker_gray" />
+        android:layout_weight="0.05"
+        android:background="@drawable/round_frame_bar_separator"/>
 
     <TextView
         android:id="@+id/utm_zone_output"
