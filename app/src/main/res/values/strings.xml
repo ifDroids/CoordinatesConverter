@@ -4,7 +4,7 @@
     <string name="bar_gnss">GNSS</string>
     <string name="bar_utm">UTM</string>
     <string name="bar_hepos">HEPOS</string>
-    <string name="input_latitude">latitude:</string>
-    <string name="input_longitude">longitude:</string>
-    <string name="input_altitude">altitude</string>
+    <string name="input_latitude">Latitude:</string>
+    <string name="input_longitude">Longitude:</string>
+    <string name="input_altitude">Altitude:</string>
 </resources>

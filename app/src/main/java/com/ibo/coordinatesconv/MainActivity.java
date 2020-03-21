@@ -43,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
     TextView mUtmzone;
     @BindView(R.id.utm_zone_boundaries)
     View mUtm_zone_boundaries;
+    @BindView(R.id.input_cor_text_lat)
+    TextView input_cor_text_lat;
+    @BindView(R.id.input_cor_text_lon)
+    TextView input_cor_text_lon;
+    @BindView(R.id.input_cor_text_alt)
+    TextView input_cor_text_alt;
+
+
 
 
     public void clearTextbutton(){
@@ -140,13 +148,14 @@ public class MainActivity extends AppCompatActivity {
         x=4;
         mBtninput_gnss.setTextColor(Color.GREEN);
         mBtninput_gnss.setBackground(getDrawable(R.drawable.round_frame_bar_option));
-
         mBtnoutput_gnss.setTextColor(Color.RED);
-
         mBtninput_utm.setTextColor(Color.RED);
         mBtninput_hepos.setTextColor(Color.RED);
         mBtninput_utm.setBackground(null);
         mBtninput_hepos.setBackground(null);
+        input_cor_text_lat.setText("Latitude");
+        input_cor_text_lon.setText("Longitude");
+        input_cor_text_alt.setText("Altitude");
         clearTextbutton();
     }
 
@@ -162,6 +171,9 @@ public class MainActivity extends AppCompatActivity {
         mBtninput_hepos.setTextColor(Color.RED);
         mBtninput_gnss.setBackground(null);
         mBtninput_hepos.setBackground(null);
+        input_cor_text_lat.setText("X");
+        input_cor_text_lon.setText("Y");
+        input_cor_text_alt.setText("Z");
         clearTextbutton();
     }
 
@@ -172,11 +184,12 @@ public class MainActivity extends AppCompatActivity {
         mBtninput_utm.setTextColor(Color.RED);
         mBtninput_gnss.setBackground(null);
         mBtninput_utm.setBackground(null);
-
         mBtnoutput_hepos.setTextColor(Color.RED);
-
         mBtninput_hepos.setTextColor(Color.GREEN);
         mBtninput_hepos.setBackground(getDrawable(R.drawable.round_frame_bar_option));
+        input_cor_text_lat.setText("X");
+        input_cor_text_lon.setText("Y");
+        input_cor_text_alt.setText("Elevation");
         clearTextbutton();
     }
 
