@@ -1,13 +1,9 @@
 package com.ibo.coordinatesconv;
 
-public abstract class DegToUtm { double Easting;
+public class DegToUtm { double Easting;
     double Northing;
     int Zone;
     char Letter;
-
-    public  DegToUtm(){
-
-    }
 
 
     public void degtoUtm(double Lat, double Lon) {
