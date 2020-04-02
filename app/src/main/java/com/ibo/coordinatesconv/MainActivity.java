@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import static com.ibo.coordinatesconv.DegToUtm.*;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
 
     public static int x;
@@ -53,13 +53,13 @@ public class MainActivity extends AppCompatActivity {
     TextView input_cor_text_alt;
 
     double lat,lon;
-    public void clearTextbutton() {
-        mInputlat.setText(" ");
-        mInputlong.setText(" ");
-        mUtmxoutput.setText(" ");
-        mUtmyoutput.setText(" ");
-        mUtmzone.setText(" ");
-    }
+//    public void clearTextbutton() {
+//        mInputlat.setText(" ");
+//        mInputlong.setText(" ");
+//        mUtmxoutput.setText(" ");
+//        mUtmyoutput.setText(" ");
+//        mUtmzone.setText(" ");
+//    }
 
 
     @Override
@@ -67,12 +67,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        final DegToUtm convert = new DegToUtm() {
-            @Override
-            public void degtoUtm(double Lat, double Lon) {
-                super.degtoUtm(Lat, Lon);
-            }
-        };
+        final DegToUtm convert = new DegToUtm();
         mBtninput_gnss.setBackground(getDrawable(R.drawable.round_frame_bar_option));
         mBtnoutput_utm.setBackground(getDrawable(R.drawable.round_frame_bar_option));
         mBtnoutput_gnss.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 mBtnoutput_utm.setBackground(null);
                 mBtnoutput_hepos.setBackground(null);
                 mUtm_zone_boundaries.setVisibility(View.GONE);
-                clearTextbutton();
+
             }
         });
         mBtnoutput_utm.setOnClickListener((new View.OnClickListener() {
@@ -107,14 +102,10 @@ public class MainActivity extends AppCompatActivity {
                 lat = Double.valueOf(mInputlong.getText().toString());
                 lon = Double.valueOf(mInputlong.getText().toString());
                 convert.degtoUtm(lat,lon);
-                Log.i("msg",String.valueOf(convert.Easting));
-                Log.i("msg",String.valueOf(convert.Northing));
-                Log.i("msg",String.valueOf(convert.Zone));
-                Log.i("msg",String.valueOf(convert.Letter));
+                mUtmxoutput.setText(String.valueOf(convert.Easting));
+                mUtmyoutput.setText(String.valueOf((convert.Northing)));
+                mUtmzone.setText((String.valueOf(convert.Zone))+(String.valueOf(convert.Letter)));
 
-
-//
-                clearTextbutton();
             }
         }));
         mBtnoutput_hepos.setOnClickListener(new View.OnClickListener() {
@@ -132,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                 mBtnoutput_hepos.setBackground(getDrawable(R.drawable.round_frame_bar_option));
 
                 mUtm_zone_boundaries.setVisibility(View.GONE);
-                clearTextbutton();
+
             }
         });
         mBtninput_gnss.setOnClickListener(new View.OnClickListener() {
@@ -148,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                 input_cor_text_lat.setText("Latitude");
                 input_cor_text_lon.setText("Longitude");
                 input_cor_text_alt.setText("Altitude");
-                clearTextbutton();
+
             }
         });
         mBtninput_utm.setOnClickListener(new View.OnClickListener() {
@@ -166,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
                 input_cor_text_lat.setText("X");
                 input_cor_text_lon.setText("Y");
                 input_cor_text_alt.setText("Z");
-                clearTextbutton();
+
             }
         });
         mBtninput_hepos.setOnClickListener(new View.OnClickListener() {
@@ -182,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
                 input_cor_text_lat.setText("X");
                 input_cor_text_lon.setText("Y");
                 input_cor_text_alt.setText("Elevation");
-                clearTextbutton();
+
             }
         });
     }
