@@ -2,6 +2,7 @@ package com.ibo.coordinatesconv;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import static com.ibo.coordinatesconv.DegToUtm.*;
+//import static com.ibo.coordinatesconv.DegToUtm.*;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity{
     EditText mInputlat;
     @BindView(R.id.input_long)
     EditText mInputlong;
+    @BindView(R.id.input_alt)
+    EditText mInputalt;
     @BindView(R.id.utm_x_output)
     TextView mUtmxoutput;
     @BindView(R.id.utm_y_output)
@@ -52,7 +55,9 @@ public class MainActivity extends AppCompatActivity{
     @BindView(R.id.input_cor_text_alt)
     TextView input_cor_text_alt;
 
-    double lat,lon;
+    double lat,lon,utmx,utmy;
+    String utmzl;
+
 //    public void clearTextbutton() {
 //        mInputlat.setText(" ");
 //        mInputlong.setText(" ");
@@ -68,6 +73,7 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         final DegToUtm convert = new DegToUtm();
+        final UTMTODEG convertUtmToGnss =new UTMTODEG();
         mBtninput_gnss.setBackground(getDrawable(R.drawable.round_frame_bar_option));
         mBtnoutput_utm.setBackground(getDrawable(R.drawable.round_frame_bar_option));
         mBtnoutput_gnss.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +88,14 @@ public class MainActivity extends AppCompatActivity{
                 mBtnoutput_utm.setBackground(null);
                 mBtnoutput_hepos.setBackground(null);
                 mUtm_zone_boundaries.setVisibility(View.GONE);
+                Editable l=mInputalt.getText();
+                utmx=Double.valueOf(String.valueOf(mInputlat.getText()));
+                utmy=Double.valueOf(String.valueOf(mInputlong.getText()));
+                utmzl=String.valueOf(mInputalt.getText());
+                convertUtmToGnss.UtmToDeg(utmx,utmy,utmzl);
+                mUtmxoutput.setText(String.valueOf(convertUtmToGnss.latitude));
+                mUtmyoutput.setText(String.valueOf(convertUtmToGnss.longitude));
+                Log.i("MSG",String.valueOf(convertUtmToGnss.longitude));
 
             }
         });
@@ -105,6 +119,7 @@ public class MainActivity extends AppCompatActivity{
                 mUtmxoutput.setText(String.valueOf(convert.Easting));
                 mUtmyoutput.setText(String.valueOf((convert.Northing)));
                 mUtmzone.setText((String.valueOf(convert.Zone))+(String.valueOf(convert.Letter)));
+
 
             }
         }));
@@ -139,6 +154,7 @@ public class MainActivity extends AppCompatActivity{
                 input_cor_text_lat.setText("Latitude");
                 input_cor_text_lon.setText("Longitude");
                 input_cor_text_alt.setText("Altitude");
+
 
             }
         });
