@@ -4,10 +4,9 @@ public class UTMTODEG {
     double latitude;
     double longitude;
 
-    public void UtmToDeg(double utmX,double utmY, String utmZL) {
-       String[] utmzl=utmZL.split(" ");
-        int Zone=Integer.parseInt((utmzl[1]));
-        char Letter=utmzl[0].charAt(0);
+    public void UtmToDeg(double utmX,double utmY,String utmZ ,int utmL) {
+        int Zone=utmL;
+        char Letter=utmZ.charAt(0);
         double Easting=utmX;
         double Northing=utmY;
         double Hem;

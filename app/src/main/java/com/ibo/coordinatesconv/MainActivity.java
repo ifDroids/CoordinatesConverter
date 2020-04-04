@@ -64,7 +64,8 @@ public class MainActivity extends AppCompatActivity{
     TextView input_cor_text_alt;
 
     double lat,lon,utmx,utmy;
-
+    String utml;
+    int utmz;
 
     @Override
     protected void onStart() {
@@ -75,8 +76,8 @@ public class MainActivity extends AppCompatActivity{
         mInputlat.setText(String.valueOf(Onstartc));
         mInputlong.setText(String.valueOf(Onstartc));
         mInputalt.setText(String.valueOf(Onstartc));
-        minput_zone.setText("'S'");
-        miput_letter.setText(String.valueOf(Onstartc));
+        minput_zone.setText(String.valueOf(0));
+        miput_letter.setText("'S'");
     }
 
     @Override
@@ -101,14 +102,15 @@ public class MainActivity extends AppCompatActivity{
                 mBtnoutput_utm.setBackground(null);
                 mBtnoutput_hepos.setBackground(null);
                 mUtm_zone_boundaries.setVisibility(View.GONE);
-//                Editable l=mInputalt.getText();
-//                utmx=Double.valueOf(String.valueOf(mInputlat.getText()));
-//                utmy=Double.valueOf(String.valueOf(mInputlong.getText()));
-//                utmzl=String.valueOf(mInputalt.getText());
-//                convertUtmToGnss.UtmToDeg(utmx,utmy,utmzl);
-//                mUtmxoutput.setText(String.valueOf(convertUtmToGnss.latitude));
-//                mUtmyoutput.setText(String.valueOf(convertUtmToGnss.longitude));
-//                Log.i("MSG",String.valueOf(convertUtmToGnss.longitude));
+                Editable l=mInputalt.getText();
+                utmx=Double.valueOf(String.valueOf(mInputlat.getText()));
+                utmy=Double.valueOf(String.valueOf(mInputlong.getText()));
+                utmz=Integer.parseInt((String.valueOf(minput_zone.getText())));
+                utml=String.valueOf(miput_letter.getText());
+                convertUtmToGnss.UtmToDeg(utmx,utmy,utml,utmz);
+                mUtmxoutput.setText(String.valueOf(convertUtmToGnss.latitude));
+                mUtmyoutput.setText(String.valueOf(convertUtmToGnss.longitude));
+                Log.i("MSG",String.valueOf(convertUtmToGnss.longitude));
 
             }
         });
@@ -117,21 +119,18 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v) {
                 mBtnoutput_gnss.setTextColor(getResources().getColor(R.color.red));
                 mBtnoutput_gnss.setBackground(null);
-
                 mBtninput_utm.setTextColor(getResources().getColor(R.color.red));
-
                 mBtnoutput_utm.setTextColor(getResources().getColor(R.color.green));
                 mBtnoutput_utm.setBackground(getDrawable(R.drawable.round_frame_bar_option));
-
                 mBtnoutput_hepos.setTextColor(getResources().getColor(R.color.red));
                 mBtnoutput_hepos.setBackground(null);
                 mUtm_zone_boundaries.setVisibility(View.VISIBLE);
-//                lat = Double.valueOf(mInputlong.getText().toString());
-//                lon = Double.valueOf(mInputlong.getText().toString());
-//                convert.degtoUtm(lat,lon);
-//                mUtmxoutput.setText(String.valueOf(convert.Easting));
-//                mUtmyoutput.setText(String.valueOf((convert.Northing)));
-//                mUtmzone.setText((String.valueOf(convert.Zone))+(String.valueOf(convert.Letter)));
+                lat = Double.valueOf(mInputlong.getText().toString());
+                lon = Double.valueOf(mInputlong.getText().toString());
+                convert.degtoUtm(lat,lon);
+                mUtmxoutput.setText(String.valueOf(convert.Easting));
+                mUtmyoutput.setText(String.valueOf((convert.Northing)));
+                mUtmzone.setText((String.valueOf(convert.Zone))+(String.valueOf(convert.Letter)));
 
 
             }
