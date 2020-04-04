@@ -3,10 +3,13 @@ package com.ibo.coordinatesconv;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Layout;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,9 +20,14 @@ import butterknife.OnClick;
 //import static com.ibo.coordinatesconv.DegToUtm.*;
 
 public class MainActivity extends AppCompatActivity{
-
-
-    public static int x;
+    @BindView(R.id.altitude_layout)
+    LinearLayout maltitude_llayout;
+    @BindView(R.id.zone_layout)
+    LinearLayout mzone_llayout;
+    @BindView(R.id.input_zone)
+    EditText minput_zone;
+    @BindView(R.id.input_letter)
+    EditText miput_letter;
     @BindView(R.id.btn_input_gnss)
     Button mBtninput_gnss; //m for member of class
     @BindView(R.id.btn_input_utm)
@@ -58,14 +66,13 @@ public class MainActivity extends AppCompatActivity{
     double lat,lon,utmx,utmy;
     String utmzl;
 
-//    public void clearTextbutton() {
-//        mInputlat.setText(" ");
-//        mInputlong.setText(" ");
-//        mUtmxoutput.setText(" ");
-//        mUtmyoutput.setText(" ");
-//        mUtmzone.setText(" ");
-//    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mzone_llayout.setVisibility(View.GONE);
+        maltitude_llayout.setVisibility(View.VISIBLE);
 
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +81,9 @@ public class MainActivity extends AppCompatActivity{
         ButterKnife.bind(this);
         final DegToUtm convert = new DegToUtm();
         final UTMTODEG convertUtmToGnss =new UTMTODEG();
+
+
+//        ViewGroup parent = (ViewGroup) mlayout.getParent();
         mBtninput_gnss.setBackground(getDrawable(R.drawable.round_frame_bar_option));
         mBtnoutput_utm.setBackground(getDrawable(R.drawable.round_frame_bar_option));
         mBtnoutput_gnss.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +91,6 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v) {
                 mBtnoutput_gnss.setTextColor(getResources().getColor(R.color.green));
                 mBtnoutput_gnss.setBackground(getDrawable(R.drawable.round_frame_bar_option));
-
                 mBtninput_gnss.setTextColor(getResources().getColor(R.color.red));
                 mBtnoutput_utm.setTextColor(getResources().getColor(R.color.red));
                 mBtnoutput_hepos.setTextColor(getResources().getColor(R.color.red));
@@ -144,6 +153,8 @@ public class MainActivity extends AppCompatActivity{
         mBtninput_gnss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mzone_llayout.setVisibility(View.GONE);
+                maltitude_llayout.setVisibility(View.VISIBLE);
                 mBtninput_gnss.setTextColor(getResources().getColor(R.color.green));
                 mBtninput_gnss.setBackground(getDrawable(R.drawable.round_frame_bar_option));
                 mBtnoutput_gnss.setTextColor(getResources().getColor(R.color.red));
@@ -161,9 +172,10 @@ public class MainActivity extends AppCompatActivity{
         mBtninput_utm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                maltitude_llayout.setVisibility(View.GONE);
                 mBtninput_utm.setTextColor(getResources().getColor(R.color.green));
                 mBtninput_utm.setBackground(getDrawable(R.drawable.round_frame_bar_option));
-
+                mzone_llayout.setVisibility(View.VISIBLE);
                 mBtnoutput_utm.setTextColor(getResources().getColor(R.color.red));
 
                 mBtninput_gnss.setTextColor(getResources().getColor(R.color.red));
@@ -179,6 +191,8 @@ public class MainActivity extends AppCompatActivity{
         mBtninput_hepos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mzone_llayout.setVisibility(View.GONE);
+                maltitude_llayout.setVisibility(View.VISIBLE);
                 mBtninput_gnss.setTextColor(getResources().getColor(R.color.red));
                 mBtninput_utm.setTextColor(getResources().getColor(R.color.red));
                 mBtninput_gnss.setBackground(null);
@@ -193,6 +207,8 @@ public class MainActivity extends AppCompatActivity{
             }
         });
     }
+
+
 }
 
 
