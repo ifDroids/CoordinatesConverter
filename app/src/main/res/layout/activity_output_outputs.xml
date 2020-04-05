@@ -9,8 +9,9 @@
         android:id="@+id/utm_x_output"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/wh_white"
         android:layout_weight="1.25"
-        android:textSize="15sp"
+        android:textSize="17sp"
         android:gravity="center" />
 
     <View
@@ -24,14 +25,16 @@
         android:id="@+id/utm_y_output"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:textColor="@color/wh_white"
         android:layout_weight="1.25"
-        android:textSize="15sp"
+        android:textSize="17sp"
         android:gravity="center" />
 
     <View
         android:id="@+id/utm_zone_boundaries"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:textColor="@color/wh_white"
         android:layout_weight="0.05"
         android:background="@drawable/round_frame_bar_separator"/>
 
@@ -39,8 +42,9 @@
         android:id="@+id/utm_zone_output"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:textColor="@color/wh_white"
         android:layout_weight="0.3"
-        android:textSize="15sp"
+        android:textSize="17sp"
         android:gravity="center" />
 
 
